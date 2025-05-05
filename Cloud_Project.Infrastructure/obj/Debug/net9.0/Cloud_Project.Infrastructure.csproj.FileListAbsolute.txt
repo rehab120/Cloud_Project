@@ -1,0 +1,17 @@
+C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\bin\Debug\net9.0\Cloud_Project.Infrastructure.deps.json
+C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\bin\Debug\net9.0\Cloud_Project.Infrastructure.dll
+C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\bin\Debug\net9.0\Cloud_Project.Infrastructure.pdb
+C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\bin\Debug\net9.0\Cloud_Project.Application.dll
+C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\bin\Debug\net9.0\Cloud_Project.Domain.dll
+C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\bin\Debug\net9.0\Cloud_Project.Application.pdb
+C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\bin\Debug\net9.0\Cloud_Project.Domain.pdb
+C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\obj\Debug\net9.0\Cloud_Project.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\obj\Debug\net9.0\Cloud_Project.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\obj\Debug\net9.0\Cloud_Project.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\obj\Debug\net9.0\Cloud_Project.Infrastructure.AssemblyInfo.cs
+C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\obj\Debug\net9.0\Cloud_Project.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\obj\Debug\net9.0\Cloud_Pr.641751E3.Up2Date
+C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\obj\Debug\net9.0\Cloud_Project.Infrastructure.dll
+C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\obj\Debug\net9.0\refint\Cloud_Project.Infrastructure.dll
+C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\obj\Debug\net9.0\Cloud_Project.Infrastructure.pdb
+C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\obj\Debug\net9.0\ref\Cloud_Project.Infrastructure.dll

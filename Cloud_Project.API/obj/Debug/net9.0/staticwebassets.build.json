@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "lIbHTuv5RGnTw0UFqUy+hi1xZd3kTHGLBj94j2Kh+RM=",
+  "Source": "Cloud_Project.API",
+  "BasePath": "_content/Cloud_Project.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
