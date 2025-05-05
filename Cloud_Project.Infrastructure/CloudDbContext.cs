@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Cloud_Project.Domain.Entities;
+using Cloud_Project.Infrastructure.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cloud_Project.Infrastructure
 {
-    public class CloudDbContext :DbContext
+    public class CloudDbContext : IdentityDbContext<ApplicationUser>
     {
         public CloudDbContext() : base() { }
 

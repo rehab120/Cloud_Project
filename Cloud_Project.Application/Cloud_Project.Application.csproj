@@ -5,14 +5,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Commond\LoginMerchant\" />
+    <Folder Include="Commond\UpdateDeliveryStatus\" />
+    <Folder Include="Commond\RequestDelivery\" />
+    <Folder Include="Commond\RegisterMerchant\" />
     <Folder Include="DTO\" />
     <Folder Include="Interface\" />
-    <Folder Include="Commond\" />
-    <Folder Include="Query\" />
+    <Folder Include="Query\GetAssignedDeliveries\" />
     <Folder Include="Usecase\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.4">
       <PrivateAssets>all</PrivateAssets>

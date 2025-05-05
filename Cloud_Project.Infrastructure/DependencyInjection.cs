@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Cloud_Project.Domain.Interface;
+using Cloud_Project.Infrastructure.Identity;
+using Cloud_Project.Infrastructure.Persistence.Repositories;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,7 +19,15 @@ namespace Cloud_Project.Infrastructure
         {
             services.AddDbContext<CloudDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("Connection")));
 
+            services.AddScoped<IDeliveryRepositry, DeliveryRepositry>();
+            services.AddScoped<IDeliveryPersonRepositry, DeliveryPersonRepositry>();
+            services.AddScoped<IMerchantRepositry, MerchantRepositry>();
+            services.AddIdentity<ApplicationUser, IdentityRole>(
+                options =>
+                {
+                    options.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultProvider;
 
+                }).AddEntityFrameworkStores<CloudDbContext>().AddDefaultTokenProviders();
             return services;
         }
     }
