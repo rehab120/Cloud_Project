@@ -13,3 +13,6 @@ C:\Users\USER\Cloud_Project\Cloud_Project.Application\obj\Debug\net9.0\Cloud_Pro
 C:\Users\USER\Cloud_Project\Cloud_Project.Application\obj\Debug\net9.0\refint\Cloud_Project.Application.dll
 C:\Users\USER\Cloud_Project\Cloud_Project.Application\obj\Debug\net9.0\Cloud_Project.Application.pdb
 C:\Users\USER\Cloud_Project\Cloud_Project.Application\obj\Debug\net9.0\ref\Cloud_Project.Application.dll
+C:\Users\USER\Cloud_Project\Cloud_Project.Application\bin\Debug\net9.0\Cloud_Project.Application.runtimeconfig.json
+C:\Users\USER\Cloud_Project\Cloud_Project.Application\obj\Debug\net9.0\Cloud_Project.Application.sourcelink.json
+C:\Users\USER\Cloud_Project\Cloud_Project.Application\obj\Debug\net9.0\Cloud_Project.Application.genruntimeconfig.cache

@@ -15,3 +15,6 @@ C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\obj\Debug\net9.0\Cloud_
 C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\obj\Debug\net9.0\refint\Cloud_Project.Infrastructure.dll
 C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\obj\Debug\net9.0\Cloud_Project.Infrastructure.pdb
 C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\obj\Debug\net9.0\ref\Cloud_Project.Infrastructure.dll
+C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\bin\Debug\net9.0\Cloud_Project.Infrastructure.runtimeconfig.json
+C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\obj\Debug\net9.0\Cloud_Project.Infrastructure.sourcelink.json
+C:\Users\USER\Cloud_Project\Cloud_Project.Infrastructure\obj\Debug\net9.0\Cloud_Project.Infrastructure.genruntimeconfig.cache

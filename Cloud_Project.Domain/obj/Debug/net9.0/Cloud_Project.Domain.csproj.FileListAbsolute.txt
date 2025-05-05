@@ -9,3 +9,7 @@ C:\Users\USER\Cloud_Project\Cloud_Project.Domain\obj\Debug\net9.0\Cloud_Project.
 C:\Users\USER\Cloud_Project\Cloud_Project.Domain\obj\Debug\net9.0\refint\Cloud_Project.Domain.dll
 C:\Users\USER\Cloud_Project\Cloud_Project.Domain\obj\Debug\net9.0\Cloud_Project.Domain.pdb
 C:\Users\USER\Cloud_Project\Cloud_Project.Domain\obj\Debug\net9.0\ref\Cloud_Project.Domain.dll
+C:\Users\USER\Cloud_Project\Cloud_Project.Domain\bin\Debug\net9.0\Cloud_Project.Domain.runtimeconfig.json
+C:\Users\USER\Cloud_Project\Cloud_Project.Domain\obj\Debug\net9.0\Cloud_Project.Domain.csproj.AssemblyReference.cache
+C:\Users\USER\Cloud_Project\Cloud_Project.Domain\obj\Debug\net9.0\Cloud_Project.Domain.sourcelink.json
+C:\Users\USER\Cloud_Project\Cloud_Project.Domain\obj\Debug\net9.0\Cloud_Project.Domain.genruntimeconfig.cache
