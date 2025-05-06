@@ -22,7 +22,7 @@ namespace Cloud_Project.Infrastructure
             services.AddScoped<IDeliveryRepositry, DeliveryRepositry>();
             services.AddScoped<IDeliveryPersonRepositry, DeliveryPersonRepositry>();
             services.AddScoped<IMerchantRepositry, MerchantRepositry>();
-            services.AddIdentity<ApplicationUser, IdentityRole>(
+            services.AddIdentity<IdentityUser, IdentityRole>(
                 options =>
                 {
                     options.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultProvider;

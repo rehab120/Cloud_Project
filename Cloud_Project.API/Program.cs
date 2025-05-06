@@ -1,3 +1,4 @@
+using Cloud_Project.API.Middlewares;
 using Cloud_Project.Application;
 using Cloud_Project.Infrastructure;
 
@@ -24,6 +25,9 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
+app.UseMiddleware<TokenBlacklistMiddleware>();
+
+
 // Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
 //{
@@ -38,6 +42,9 @@ if (app.Environment.IsDevelopment())
 app.UseCors("AllowAll");
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers(); 
 

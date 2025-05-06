@@ -5,18 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cloud_Project.Domain.Entities
+namespace Cloud_Project.Application.DTO
 {
-    public class Merchant
+    public class RegisterDto
     {
-        [Key]
-        public int Id { get; set; }
-
         [Required]
         [MaxLength(30)]
         [MinLength(2)]
         public string UserName { get; set; }
-
         [Required]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
@@ -24,8 +20,6 @@ namespace Cloud_Project.Domain.Entities
         [Required]
         [DataType(DataType.Password)]
         public string Passsword { get; set; }
-
-        
 
     }
 }

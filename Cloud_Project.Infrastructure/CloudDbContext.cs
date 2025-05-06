@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Cloud_Project.Domain.Entities;
 using Cloud_Project.Infrastructure.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cloud_Project.Infrastructure
 {
-    public class CloudDbContext : IdentityDbContext<ApplicationUser>
+    public class CloudDbContext : IdentityDbContext<IdentityUser>
     {
         public CloudDbContext() : base() { }
 

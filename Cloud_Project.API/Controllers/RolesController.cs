@@ -22,7 +22,7 @@ namespace Cloud_Project.API.Controllers
             {
                 return Ok("role Added Sucessfully");
             }
-            return BadRequest();
+            return BadRequest(result.Errors);
         }
     }
 }
