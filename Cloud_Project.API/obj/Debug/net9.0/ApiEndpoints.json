@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "ContainingType": "Cloud_Project.API.Controllers.RolesController",
+    "Method": "AddRole",
+    "RelativePath": "api/Roles",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Cloud_Project.Application.Commond.AddRole.AddRoleCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

@@ -54,6 +54,18 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "AWSSDK.Core": {
+              "target": "Package",
+              "version": "[4.0.0.2, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.5.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[9.0.4, )"
@@ -81,6 +93,10 @@
             "Microsoft.Extensions.Hosting.Abstractions": {
               "target": "Package",
               "version": "[9.0.4, )"
+            },
+            "Microsoft.TestPlatform.ObjectModel": {
+              "target": "Package",
+              "version": "[17.13.0, )"
             }
           },
           "imports": [
