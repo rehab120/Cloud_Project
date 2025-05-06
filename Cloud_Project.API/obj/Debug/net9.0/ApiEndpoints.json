@@ -17,6 +17,32 @@
   },
   {
     "ContainingType": "Cloud_Project.API.Controllers.AccountController",
+    "Method": "Logout",
+    "RelativePath": "api/Account/logout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cloud_Project.API.Controllers.AccountController",
+    "Method": "Register_DeliveryPerson",
+    "RelativePath": "api/Account/Register_Delivery",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "register",
+        "Type": "Cloud_Project.Application.DTO.RegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cloud_Project.API.Controllers.AccountController",
     "Method": "Register",
     "RelativePath": "api/Account/Register_Merchant",
     "HttpMethod": "POST",

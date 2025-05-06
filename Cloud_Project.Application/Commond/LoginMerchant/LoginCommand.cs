@@ -24,8 +24,7 @@ namespace Cloud_Project.Application.Commond.LoginMerchant
         private readonly UserManager<IdentityUser> userManager;
         private readonly IConfiguration _configuration;
         private readonly SignInManager<IdentityUser> _signInManager;
-        public static readonly ConcurrentDictionary<string, DateTime> _blacklistedTokens = new();
-
+        
         public LoginHandler(UserManager<IdentityUser> userManager, IConfiguration _configuration, SignInManager<IdentityUser> _signInManager)
         {
             this.userManager = userManager;

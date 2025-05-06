@@ -1,5 +1,6 @@
 ﻿using Cloud_Project.API.Controllers;
 using Cloud_Project.Application.Commond.LoginMerchant;
+using Cloud_Project.Application.Commond.Logout;
 using System.Collections.Concurrent;
 
 namespace Cloud_Project.API.Middlewares
@@ -7,7 +8,7 @@ namespace Cloud_Project.API.Middlewares
     public class TokenBlacklistMiddleware
     {
         private readonly RequestDelegate _next;
-        private static readonly ConcurrentDictionary<string, DateTime> _blacklistedTokens = LoginHandler._blacklistedTokens;
+        private static readonly ConcurrentDictionary<string, DateTime> _blacklistedTokens = LogOutHandler._blacklistedTokens;
 
         public TokenBlacklistMiddleware(RequestDelegate next)
         {

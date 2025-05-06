@@ -1,8 +1,10 @@
 ﻿using Cloud_Project.Application.Commond.LoginMerchant;
+using Cloud_Project.Application.Commond.Logout;
+using Cloud_Project.Application.Commond.RegisterDPerson;
 using Cloud_Project.Application.Commond.RegisterMerchant;
 using Cloud_Project.Application.DTO;
 using MediatR;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cloud_Project.API.Controllers
@@ -31,6 +33,22 @@ namespace Cloud_Project.API.Controllers
             return BadRequest(result.Errors);
         }
 
+        [HttpPost("Register_Delivery")]
+        public async Task<IActionResult> Register_DeliveryPerson([FromBody] RegisterDto register)
+        {
+            var command = new RegisterDeliveryPersonCommand(register.UserName, register.Email, register.Passsword, register.PhoneNumber);
+            var result = await mediator.Send(command);
+
+            if (result.Success)
+            {
+
+                return Ok("User Register Successfully");
+            }
+            return BadRequest(result.Errors);
+        }
+
+
+
         [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody] LoginDto login)
         {
@@ -45,6 +63,19 @@ namespace Cloud_Project.API.Controllers
             return BadRequest(resultL.Errors);
         }
 
+        [HttpPost("logout")]
+        [Authorize]
+        public async Task<IActionResult> Logout()
+        {
+            var token = Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+
+            var result = await mediator.Send(new LogOutCommand(token));
+
+            if (!result.success)
+                return BadRequest(result);
+
+            return Ok("Logged out successfully");
+        }
 
 
 
