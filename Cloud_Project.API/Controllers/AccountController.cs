@@ -1,7 +1,7 @@
-﻿using Cloud_Project.Application.Commond.LoginMerchant;
-using Cloud_Project.Application.Commond.Logout;
-using Cloud_Project.Application.Commond.RegisterDPerson;
-using Cloud_Project.Application.Commond.RegisterMerchant;
+﻿using Cloud_Project.Application.Command.LoginMerchant;
+using Cloud_Project.Application.Command.Logout;
+using Cloud_Project.Application.Command.RegisterDPerson;
+using Cloud_Project.Application.Command.RegisterMerchant;
 using Cloud_Project.Application.DTO;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;

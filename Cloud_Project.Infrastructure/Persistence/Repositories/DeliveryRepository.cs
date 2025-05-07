@@ -1,6 +1,6 @@
 ﻿using Cloud_Project.Application.Common.Enums;
 using Cloud_Project.Application.Common.Interfaces;
-using Cloud_Project.Application.Interface;
+using Cloud_Project.Domain.Interface;
 using Cloud_Project.Domain.Entities;
 using Cloud_Project.Domain.Enums;
 using Microsoft.EntityFrameworkCore;

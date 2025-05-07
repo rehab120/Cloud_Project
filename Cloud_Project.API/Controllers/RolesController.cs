@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MediatR;
-using Cloud_Project.Application.Commond.AddRole;
+using Cloud_Project.Application.Command.AddRole;
 
 namespace Cloud_Project.API.Controllers
 {

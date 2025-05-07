@@ -1,9 +1,6 @@
-﻿using Cloud_Project.Application.Commond.AddRole;
-using Cloud_Project.Application.Commond.LoginMerchant;
-using Cloud_Project.Application.Commond.RegisterMerchant;
-using Cloud_Project.Application.Usecase.Commands;
-using Cloud_Project.Application.Usecase.Queries;
-using Cloud_Project.Application.Usecase.Queries.GetDeliveryById;
+﻿using Cloud_Project.Application.Command.AddRole;
+using Cloud_Project.Application.Command.LoginMerchant;
+using Cloud_Project.Application.Command.RegisterMerchant;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;

@@ -1,5 +1,4 @@
 ﻿using Cloud_Project.Application.Common.Interfaces;
-using Cloud_Project.Application.Interface;
 using Cloud_Project.Domain.Interface;
 using Cloud_Project.Infrastructure.Persistence.Repositories;
 using Cloud_Project.Infrastructure.Services;

@@ -1,6 +1,6 @@
 ﻿using Cloud_Project.API.Controllers;
-using Cloud_Project.Application.Commond.LoginMerchant;
-using Cloud_Project.Application.Commond.Logout;
+using Cloud_Project.Application.Command.Logout;
+using Cloud_Project.Application.Command.LoginMerchant;
 using System.Collections.Concurrent;
 
 namespace Cloud_Project.API.Middlewares

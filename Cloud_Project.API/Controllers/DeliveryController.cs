@@ -1,9 +1,9 @@
-﻿using Cloud_Project.Application.Usecase.Commands.DeleteDelivery;
-using Cloud_Project.Application.Usecase.Commands.RequestDelivery;
-using Cloud_Project.Application.Usecase.Commands.UpdateDeliveryStatus;
-using Cloud_Project.Application.Usecase.Queries.GetAllAssignedDeliveries;
-using Cloud_Project.Application.Usecase.Queries.GetAllFinishedDeliveries;
-using Cloud_Project.Application.Usecase.Queries.GetDeliveryById;
+﻿using Cloud_Project.Application.Command.DeleteDelivery;
+using Cloud_Project.Application.Command.RequestDelivery;
+using Cloud_Project.Application.Command.UpdateDeliveryStatus;
+using Cloud_Project.Application.Query.GetAllAssignedDeliveries;
+using Cloud_Project.Application.Query.GetAllFinishedDeliveries;
+using Cloud_Project.Application.Query.GetDeliveryById;
 using Cloud_Project.Domain.Enums;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

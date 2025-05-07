@@ -1,8 +1,8 @@
-﻿using Cloud_Project.Application.Usecase.Commands.CreatePackage;
-using Cloud_Project.Application.Usecase.Commands.DeletePackage;
-using Cloud_Project.Application.Usecase.Commands.UpdatePackage;
-using Cloud_Project.Application.Usecase.Queries.GetAllPackages;
-using Cloud_Project.Application.Usecase.Queries.GetPackageById;
+﻿using Cloud_Project.Application.Command.CreatePackage;
+using Cloud_Project.Application.Command.DeletePackage;
+using Cloud_Project.Application.Command.UpdatePackage;
+using Cloud_Project.Application.Query.GetAllPackages;
+using Cloud_Project.Application.Query.GetPackageById;
 using Cloud_Project.Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
