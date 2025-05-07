@@ -8,6 +8,7 @@ namespace Cloud_Project.Domain.Enums
 {
     public enum Status
     {
+        Pending,
         Picked,
         Delivered
     }

@@ -14,19 +14,10 @@ namespace Cloud_Project.Domain.Entities
     public class Delivery
     {
         [Key]
-        public int Id { get; set; }
+        public string Id { get; set; } = string.Empty;
 
         [Required]
-        public string Name { get; set; }
-
-        [Required]
-        [MaxLength(50)]    
-        public string Address { get; set; }
-        [Required]
-        public double Weight { get; set; }
-        [Required]
-        public string Size { get; set; }
-
+        public List<Package> Packages { get; set; } = new List<Package>();
 
         public Status  StatusDelivery { get; set; } 
 

@@ -5,14 +5,14 @@
 namespace Cloud_Project.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class DeleteNameMerchant : Migration
+    public partial class DeliveryEdit2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
                 name: "Name",
-                table: "Merchant");
+                table: "Delivery");
         }
 
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace Cloud_Project.Infrastructure.Migrations
         {
             migrationBuilder.AddColumn<string>(
                 name: "Name",
-                table: "Merchant",
+                table: "Delivery",
                 type: "nvarchar(max)",
                 nullable: false,
                 defaultValue: "");

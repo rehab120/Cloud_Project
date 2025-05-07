@@ -7,7 +7,7 @@ using Cloud_Project.Domain.Interface;
 
 namespace Cloud_Project.Infrastructure.Persistence.Repositories
 {
-    public class MerchantRepositry : IMerchantRepositry
+    public class MerchantRepository : IMerchantRepositry
     {
 
     }

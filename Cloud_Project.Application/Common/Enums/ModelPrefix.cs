@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cloud_Project.Domain.Interface
+namespace Cloud_Project.Application.Common.Enums
 {
-    public interface IDeliveryRepositry
+    public enum ModelPrefix
     {
-
+        Package,
+        Delivery
     }
 }

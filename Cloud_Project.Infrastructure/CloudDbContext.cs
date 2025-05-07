@@ -19,9 +19,10 @@ namespace Cloud_Project.Infrastructure
         {
 
         }
+
         public DbSet<DeliveryPerson> DeliveryPersons { get; set; }
         public DbSet<Delivery> Delivery { get; set; }
-
         public DbSet<Merchant> Merchant { get; set; }
+        public DbSet<Package> Package { get; set; }
     }
 }

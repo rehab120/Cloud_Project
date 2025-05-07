@@ -5,17 +5,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Commond\UpdateDeliveryStatus\" />
-    <Folder Include="Commond\RequestDelivery\" />
-    <Folder Include="Interface\" />
     <Folder Include="Query\GetAssignedDeliveries\" />
-    <Folder Include="Usecase\" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AWSSDK.Core" Version="4.0.0.2" />
-    <PackageReference Include="MediatR" Version="12.5.0" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
+    <PackageReference Include="AWSSDK.Core" Version="4.0.0.3" />
+    <PackageReference Include="MediatR" Version="11.1.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+	<PackageReference Include="MediatR.Contracts" Version="1.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.4">

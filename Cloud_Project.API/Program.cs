@@ -1,11 +1,32 @@
 using Cloud_Project.API.Middlewares;
 using Cloud_Project.Application;
 using Cloud_Project.Infrastructure;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddApplicationServices(builder.Configuration);
+
+//builder.Services
+//    .AddApplicationServices(builder.Configuration)
+//    .AddInfrastructureServices(builder.Configuration);
+
+
+//// commands
+//builder.Services.AddMediatR(typeof(CreatePackage).Assembly);
+//builder.Services.AddMediatR(typeof(CreateDeliveryRequest).Assembly);
+////builder.Services.AddMediatR(typeof(UpdateDeliveryStatus).Assembly);
+
+//// queries
+//builder.Services.AddMediatR(typeof(GetAllPackages).Assembly);
+////builder.Services.AddMediatR(typeof(GetAllAssignedDeliveryRequests).Assembly);
+////builder.Services.AddMediatR(typeof(GetAllFinishedDeliveryRequests).Assembly);
+
+//builder.Services.AddDbContext<CloudDbContext>(options =>
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("Connection")));
+
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
@@ -28,7 +49,7 @@ var app = builder.Build();
 app.UseMiddleware<TokenBlacklistMiddleware>();
 
 
-// Configure the HTTP request pipeline.
+//Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
 //{
 //    app.MapOpenApi();

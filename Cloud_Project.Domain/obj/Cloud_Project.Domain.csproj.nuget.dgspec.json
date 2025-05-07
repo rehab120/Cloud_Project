@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\Cloud_Project\\Cloud_Project.Domain\\Cloud_Project.Domain.csproj": {}
+    "C:\\Users\\DELL\\Desktop\\Cloud\\Cloud_Project\\Cloud_Project.Domain\\Cloud_Project.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\Cloud_Project\\Cloud_Project.Domain\\Cloud_Project.Domain.csproj": {
+    "C:\\Users\\DELL\\Desktop\\Cloud\\Cloud_Project\\Cloud_Project.Domain\\Cloud_Project.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Cloud_Project\\Cloud_Project.Domain\\Cloud_Project.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\DELL\\Desktop\\Cloud\\Cloud_Project\\Cloud_Project.Domain\\Cloud_Project.Domain.csproj",
         "projectName": "Cloud_Project.Domain",
-        "projectPath": "C:\\Users\\USER\\Cloud_Project\\Cloud_Project.Domain\\Cloud_Project.Domain.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Cloud_Project\\Cloud_Project.Domain\\obj\\",
+        "projectPath": "C:\\Users\\DELL\\Desktop\\Cloud\\Cloud_Project\\Cloud_Project.Domain\\Cloud_Project.Domain.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DELL\\Desktop\\Cloud\\Cloud_Project\\Cloud_Project.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -50,6 +50,18 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
+            "MediatR.Contracts": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[9.0.4, )"

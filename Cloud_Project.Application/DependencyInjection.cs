@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Cloud_Project.Application.Commond.AddRole;
+﻿using Cloud_Project.Application.Commond.AddRole;
 using Cloud_Project.Application.Commond.LoginMerchant;
 using Cloud_Project.Application.Commond.RegisterMerchant;
+using Cloud_Project.Application.Usecase.Commands;
+using Cloud_Project.Application.Usecase.Queries;
+using Cloud_Project.Application.Usecase.Queries.GetDeliveryById;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 
 
@@ -19,12 +19,33 @@ namespace Cloud_Project.Application
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddMediatR(cfg =>
-            {
-                cfg.RegisterServicesFromAssembly(typeof(AddRoleCommand).Assembly);
-                cfg.RegisterServicesFromAssembly(typeof(RegisterCommand).Assembly);
-                cfg.RegisterServicesFromAssembly(typeof(LoginCommand).Assembly);
-            });
+            //services.AddMediatR(cfg =>
+            //{
+            //    cfg.RegisterServicesFromAssembly(typeof(AddRoleCommand).Assembly);
+            //    cfg.RegisterServicesFromAssembly(typeof(RegisterCommand).Assembly);
+            //    cfg.RegisterServicesFromAssembly(typeof(LoginCommand).Assembly);
+            //});
+
+            services.AddMediatR(
+                typeof(AddRoleCommand).Assembly,
+                typeof(RegisterCommand).Assembly,
+                typeof(LoginCommand).Assembly,
+
+                // package
+                typeof(CreatePackage).Assembly,
+                typeof(GetAllPackages).Assembly,
+                typeof(GetPackageById).Assembly,
+                typeof(UpdatePackage).Assembly,
+                typeof(DeletePackage).Assembly,
+
+                // delivery
+                typeof(CreateDeliveryRequest).Assembly,
+                typeof(GetAllAssignedDeliveries).Assembly,
+                typeof(GetAllFinishedDeliveries).Assembly,
+                typeof(GetDeliveryById).Assembly,
+                typeof(UpdateDeliveryStatus).Assembly,
+                typeof(DeleteDelivery).Assembly
+            );
 
             services.AddAuthentication(o =>
             {
@@ -52,8 +73,8 @@ namespace Cloud_Project.Application
 
                 };
             });
-        
-             return services;
+
+            return services;
         }
     }
 }

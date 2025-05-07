@@ -7,7 +7,7 @@ using Cloud_Project.Domain.Interface;
 
 namespace Cloud_Project.Infrastructure.Persistence.Repositories
 {
-    public class DeliveryPersonRepositry : IDeliveryPersonRepositry
+    public class DeliveryPersonRepository : IDeliveryPersonRepositry
     {
     }
 }
