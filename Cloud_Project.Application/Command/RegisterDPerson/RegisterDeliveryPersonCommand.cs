@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Cloud_Project.Domain.Entities;
+using Cloud_Project.Domain.Interface;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 
@@ -15,11 +17,12 @@ namespace Cloud_Project.Application.Command.RegisterDPerson
     {
         private readonly UserManager<IdentityUser> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
-
-        public RegisterDeliveryHandler(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
+        private readonly IDeliveryPersonRepositry deliveryPersonRepositry;
+        public RegisterDeliveryHandler(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IDeliveryPersonRepositry deliveryPersonRepositry)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
+            this.deliveryPersonRepositry = deliveryPersonRepositry;
         }
 
         public async Task<RegisterDeliveryPersonResult> Handle(RegisterDeliveryPersonCommand command, CancellationToken cancellationToken)
@@ -43,10 +46,12 @@ namespace Cloud_Project.Application.Command.RegisterDPerson
             }
 
             var roleResult = await userManager.AddToRoleAsync(user, "DeliveryPerson");
+
             if (!roleResult.Succeeded)
             {
                 return new RegisterDeliveryPersonResult(false, roleResult.Errors.Select(e => e.Description).ToList());
             }
+            await deliveryPersonRepositry.AddAsync(user);
 
             return new RegisterDeliveryPersonResult(true, new());
         }

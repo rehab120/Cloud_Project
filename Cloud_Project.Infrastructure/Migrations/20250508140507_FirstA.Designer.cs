@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cloud_Project.Infrastructure.Migrations
 {
     [DbContext(typeof(CloudDbContext))]
-    [Migration("20250507175010_EditedIDs")]
-    partial class EditedIDs
+    [Migration("20250508140507_FirstA")]
+    partial class FirstA
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,32 +30,18 @@ namespace Cloud_Project.Infrastructure.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<string>("DeliveryPerson_id")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("DeliveryPerson_id")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Merchant_id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Size")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Merchant_id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("StatusDelivery")
                         .HasColumnType("int");
 
-                    b.Property<double>("Weight")
-                        .HasColumnType("float");
-
                     b.HasKey("Id");
+
+                    b.HasIndex("DeliveryPerson_id");
 
                     b.HasIndex("Merchant_id");
 
@@ -64,17 +50,10 @@ namespace Cloud_Project.Infrastructure.Migrations
 
             modelBuilder.Entity("Cloud_Project.Domain.Entities.DeliveryPerson", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -82,7 +61,7 @@ namespace Cloud_Project.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Ssn")
+                    b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -98,11 +77,8 @@ namespace Cloud_Project.Infrastructure.Migrations
 
             modelBuilder.Entity("Cloud_Project.Domain.Entities.Merchant", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -131,14 +107,19 @@ namespace Cloud_Project.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Delivery_id")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("Size")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Weight")
-                        .HasColumnType("int");
+                    b.Property<float>("Weight")
+                        .HasColumnType("real");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Delivery_id");
 
                     b.ToTable("Package");
                 });
@@ -345,7 +326,7 @@ namespace Cloud_Project.Infrastructure.Migrations
                 {
                     b.HasOne("Cloud_Project.Domain.Entities.DeliveryPerson", "DeliveryPerson")
                         .WithMany()
-                        .HasForeignKey("Merchant_id");
+                        .HasForeignKey("DeliveryPerson_id");
 
                     b.HasOne("Cloud_Project.Domain.Entities.Merchant", "Merchant")
                         .WithMany()
@@ -354,6 +335,15 @@ namespace Cloud_Project.Infrastructure.Migrations
                     b.Navigation("DeliveryPerson");
 
                     b.Navigation("Merchant");
+                });
+
+            modelBuilder.Entity("Cloud_Project.Domain.Entities.Package", b =>
+                {
+                    b.HasOne("Cloud_Project.Domain.Entities.Delivery", "Delivery")
+                        .WithMany("Packages")
+                        .HasForeignKey("Delivery_id");
+
+                    b.Navigation("Delivery");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -405,6 +395,11 @@ namespace Cloud_Project.Infrastructure.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Cloud_Project.Domain.Entities.Delivery", b =>
+                {
+                    b.Navigation("Packages");
                 });
 #pragma warning restore 612, 618
         }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Cloud_Project.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class AddPackageTable : Migration
+    public partial class FirstA : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -54,13 +54,11 @@ namespace Cloud_Project.Infrastructure.Migrations
                 name: "DeliveryPersons",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Passsword = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Ssn = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -71,8 +69,7 @@ namespace Cloud_Project.Infrastructure.Migrations
                 name: "Merchant",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Passsword = table.Column<string>(type: "nvarchar(max)", nullable: false)
@@ -80,20 +77,6 @@ namespace Cloud_Project.Infrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Merchant", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Package",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Size = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Weight = table.Column<int>(type: "int", nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Package", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -207,26 +190,42 @@ namespace Cloud_Project.Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Weight = table.Column<double>(type: "float", nullable: false),
-                    Size = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StatusDelivery = table.Column<int>(type: "int", nullable: false),
-                    Merchant_id = table.Column<int>(type: "int", nullable: true),
-                    DeliveryPerson_id = table.Column<int>(type: "int", nullable: true)
+                    Merchant_id = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    DeliveryPerson_id = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Delivery", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Delivery_DeliveryPersons_Merchant_id",
-                        column: x => x.Merchant_id,
+                        name: "FK_Delivery_DeliveryPersons_DeliveryPerson_id",
+                        column: x => x.DeliveryPerson_id,
                         principalTable: "DeliveryPersons",
                         principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Delivery_Merchant_Merchant_id",
                         column: x => x.Merchant_id,
                         principalTable: "Merchant",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Package",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Size = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Weight = table.Column<float>(type: "real", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Delivery_id = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Package", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Package_Delivery_Delivery_id",
+                        column: x => x.Delivery_id,
+                        principalTable: "Delivery",
                         principalColumn: "Id");
                 });
 
@@ -270,9 +269,19 @@ namespace Cloud_Project.Infrastructure.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Delivery_DeliveryPerson_id",
+                table: "Delivery",
+                column: "DeliveryPerson_id");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Delivery_Merchant_id",
                 table: "Delivery",
                 column: "Merchant_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Package_Delivery_id",
+                table: "Package",
+                column: "Delivery_id");
         }
 
         /// <inheritdoc />
@@ -294,9 +303,6 @@ namespace Cloud_Project.Infrastructure.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Delivery");
-
-            migrationBuilder.DropTable(
                 name: "Package");
 
             migrationBuilder.DropTable(
@@ -304,6 +310,9 @@ namespace Cloud_Project.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Delivery");
 
             migrationBuilder.DropTable(
                 name: "DeliveryPersons");

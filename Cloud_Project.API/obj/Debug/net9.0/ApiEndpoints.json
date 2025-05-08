@@ -67,7 +67,7 @@
     "Parameters": [
       {
         "Name": "command",
-        "Type": "Cloud_Project.Application.Usecase.Commands.RequestDelivery.AddDeliveryRequestCommand",
+        "Type": "Cloud_Project.Application.Command.RequestDelivery.AddDeliveryRequestCommand",
         "IsRequired": true
       }
     ],
@@ -166,7 +166,7 @@
     "Parameters": [
       {
         "Name": "command",
-        "Type": "Cloud_Project.Application.Usecase.Commands.CreatePackage.CreatePackageCommand",
+        "Type": "Cloud_Project.Application.Command.CreatePackage.CreatePackageCommand",
         "IsRequired": true
       }
     ],
@@ -235,7 +235,7 @@
     "Parameters": [
       {
         "Name": "command",
-        "Type": "Cloud_Project.Application.Commond.AddRole.AddRoleCommand",
+        "Type": "Cloud_Project.Application.Command.AddRole.AddRoleCommand",
         "IsRequired": true
       }
     ],

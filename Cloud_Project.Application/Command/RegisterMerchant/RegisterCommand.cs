@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Cloud_Project.Domain.Interface;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 
@@ -15,11 +16,13 @@ namespace Cloud_Project.Application.Command.RegisterMerchant
     {
         private readonly UserManager<IdentityUser> userManager;
         private readonly RoleManager<IdentityRole> roleManager;
+        private readonly IMerchantRepositry merchantRepositry;
 
-        public RegisterHandler(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
+        public RegisterHandler(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IMerchantRepositry merchantRepositry)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
+            this.merchantRepositry = merchantRepositry;
         }
 
         public async Task<RegisterResult> Handle(RegisterCommand command, CancellationToken cancellationToken)
@@ -46,6 +49,7 @@ namespace Cloud_Project.Application.Command.RegisterMerchant
             {
                 return new RegisterResult(false, roleResult.Errors.Select(e => e.Description).ToList());
             }
+            merchantRepositry.AddAsync(user);
 
             return new RegisterResult(true, new());
         }

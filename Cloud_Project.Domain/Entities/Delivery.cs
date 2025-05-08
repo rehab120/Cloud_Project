@@ -19,18 +19,18 @@ namespace Cloud_Project.Domain.Entities
         [Required]
         public List<Package> Packages { get; set; } = new List<Package>();
 
-        public Status  StatusDelivery { get; set; } 
+        public Status  StatusDelivery { get; set; }
 
-        public int? Merchant_id { get; set; }
+        public string? Merchant_id { get; set; }
 
         [ValidateNever]
         [ForeignKey(nameof(Merchant_id))]
         public Merchant? Merchant { get; set; }
 
-        public int? DeliveryPerson_id { get; set; }
+        public string? DeliveryPerson_id { get; set; }
 
         [ValidateNever]
-        [ForeignKey(nameof(Merchant_id))]
+        [ForeignKey(nameof(DeliveryPerson_id))]
         public DeliveryPerson? DeliveryPerson { get; set; }
 
     }

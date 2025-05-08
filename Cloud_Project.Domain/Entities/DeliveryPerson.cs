@@ -10,10 +10,8 @@ namespace Cloud_Project.Domain.Entities
     public class DeliveryPerson
     {
         [Key]
-        public int Id { get; set; }
-        [Required]
+        public string Id { get; set; }
 
-        public string Name { get; set; }
         [Required]
         [MaxLength(30)]
         [MinLength(2)]
@@ -28,6 +26,9 @@ namespace Cloud_Project.Domain.Entities
         public string Passsword { get; set; }    
         
         [Required]
-        public string Ssn { get; set; }
+        [DataType(DataType.PhoneNumber)]
+        public string PhoneNumber { get; set; }
+
+       
     }
 }

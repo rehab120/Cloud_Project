@@ -15,6 +15,7 @@ namespace Cloud_Project.Infrastructure
         {
             services.AddDbContext<CloudDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("Connection")));
 
+            
             services.AddScoped<IDeliveryRepository, DeliveryRepository>();
             services.AddScoped<IPackageRepository, PackageRepository>();
             services.AddScoped<IIdGenerator, IdGenerator>();

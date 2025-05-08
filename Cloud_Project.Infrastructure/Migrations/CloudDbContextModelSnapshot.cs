@@ -27,16 +27,18 @@ namespace Cloud_Project.Infrastructure.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("DeliveryPerson_id")
-                        .HasColumnType("int");
+                    b.Property<string>("DeliveryPerson_id")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("Merchant_id")
-                        .HasColumnType("int");
+                    b.Property<string>("Merchant_id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("StatusDelivery")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DeliveryPerson_id");
 
                     b.HasIndex("Merchant_id");
 
@@ -45,17 +47,10 @@ namespace Cloud_Project.Infrastructure.Migrations
 
             modelBuilder.Entity("Cloud_Project.Domain.Entities.DeliveryPerson", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -63,7 +58,7 @@ namespace Cloud_Project.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Ssn")
+                    b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -79,11 +74,8 @@ namespace Cloud_Project.Infrastructure.Migrations
 
             modelBuilder.Entity("Cloud_Project.Domain.Entities.Merchant", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -331,7 +323,7 @@ namespace Cloud_Project.Infrastructure.Migrations
                 {
                     b.HasOne("Cloud_Project.Domain.Entities.DeliveryPerson", "DeliveryPerson")
                         .WithMany()
-                        .HasForeignKey("Merchant_id");
+                        .HasForeignKey("DeliveryPerson_id");
 
                     b.HasOne("Cloud_Project.Domain.Entities.Merchant", "Merchant")
                         .WithMany()

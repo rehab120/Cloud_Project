@@ -645,3 +645,4 @@ D:\USER\cloud_new\Cloud_Project\Cloud_Project.API\obj\Debug\net9.0\refint\Cloud_
 D:\USER\cloud_new\Cloud_Project\Cloud_Project.API\obj\Debug\net9.0\Cloud_Project.API.pdb
 D:\USER\cloud_new\Cloud_Project\Cloud_Project.API\obj\Debug\net9.0\Cloud_Project.API.genruntimeconfig.cache
 D:\USER\cloud_new\Cloud_Project\Cloud_Project.API\obj\Debug\net9.0\ref\Cloud_Project.API.dll
+D:\USER\cloud_new\Cloud_Project\Cloud_Project.API\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

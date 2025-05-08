@@ -22,7 +22,7 @@ namespace Cloud_Project.API.Controllers
         [HttpPost("Register_Merchant")]
         public async Task<IActionResult> Register([FromBody] RegisterDto register)
         {
-            var command = new RegisterCommand(register.UserName, register.Email, register.Passsword);
+            var command = new RegisterCommand(register.UserName, register.Email, register.Password);
             var result = await mediator.Send(command);
 
             if (result.Success)
@@ -36,7 +36,7 @@ namespace Cloud_Project.API.Controllers
         [HttpPost("Register_Delivery")]
         public async Task<IActionResult> Register_DeliveryPerson([FromBody] RegisterDto register)
         {
-            var command = new RegisterDeliveryPersonCommand(register.UserName, register.Email, register.Passsword, register.PhoneNumber);
+            var command = new RegisterDeliveryPersonCommand(register.UserName, register.Email, register.Password, register.PhoneNumber);
             var result = await mediator.Send(command);
 
             if (result.Success)

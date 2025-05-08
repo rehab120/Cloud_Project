@@ -1,11 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <Compile Remove="Interface\**" />
+    <EmbeddedResource Remove="Interface\**" />
+    <None Remove="Interface\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Cloud_Project.Domain\Cloud_Project.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interface\" />
     <Folder Include="Query\GetAssignedDeliveries\" />
   </ItemGroup>
 

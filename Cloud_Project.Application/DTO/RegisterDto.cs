@@ -19,7 +19,7 @@ namespace Cloud_Project.Application.DTO
 
         [Required]
         [DataType(DataType.Password)]
-        public string Passsword { get; set; }
+        public string Password { get; set; }
 
         [DataType(DataType.PhoneNumber)]
         public string? PhoneNumber { get; set; }

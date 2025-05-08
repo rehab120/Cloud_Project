@@ -465,16 +465,14 @@
             "$ref": "#/components/schemas/Status"
           },
           "merchant_id": {
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "nullable": true
           },
           "merchant": {
             "$ref": "#/components/schemas/Merchant"
           },
           "deliveryPerson_id": {
-            "type": "integer",
-            "format": "int32",
+            "type": "string",
             "nullable": true
           },
           "deliveryPerson": {
@@ -486,20 +484,15 @@
       "DeliveryPerson": {
         "required": [
           "email",
-          "name",
           "passsword",
-          "ssn",
+          "phoneNumber",
           "userName"
         ],
         "type": "object",
         "properties": {
           "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "name": {
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "userName": {
             "maxLength": 30,
@@ -516,9 +509,10 @@
             "type": "string",
             "format": "password"
           },
-          "ssn": {
+          "phoneNumber": {
             "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "format": "tel"
           }
         },
         "additionalProperties": false
@@ -550,8 +544,8 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "integer",
-            "format": "int32"
+            "type": "string",
+            "nullable": true
           },
           "userName": {
             "maxLength": 30,
@@ -609,7 +603,7 @@
       "RegisterDto": {
         "required": [
           "email",
-          "passsword",
+          "password",
           "userName"
         ],
         "type": "object",
@@ -624,7 +618,7 @@
             "type": "string",
             "format": "email"
           },
-          "passsword": {
+          "password": {
             "minLength": 1,
             "type": "string",
             "format": "password"

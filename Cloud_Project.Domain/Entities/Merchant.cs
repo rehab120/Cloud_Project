@@ -10,7 +10,7 @@ namespace Cloud_Project.Domain.Entities
     public class Merchant
     {
         [Key]
-        public int Id { get; set; }
+        public string Id { get; set; } 
 
         [Required]
         [MaxLength(30)]
