@@ -1,4 +1,5 @@
 ﻿using Cloud_Project.Domain.Interface;
+
 using Cloud_Project.Application.Query.GetAllAssignedDeliveries;
 using Cloud_Project.Domain.Entities;
 using MediatR;

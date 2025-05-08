@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cloud_Project.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eae586b80b358459a40d36e440991be081434020")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+05aab55794e495872f80d7f42ddd4bfb0278bd84")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cloud_Project.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cloud_Project.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

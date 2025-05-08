@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DELL\\Desktop\\Cloud\\Cloud_Project\\Cloud_Project.Application\\Cloud_Project.Application.csproj": {}
+    "D:\\USER\\cloud_new\\Cloud_Project\\Cloud_Project.Application\\Cloud_Project.Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DELL\\Desktop\\Cloud\\Cloud_Project\\Cloud_Project.Application\\Cloud_Project.Application.csproj": {
+    "D:\\USER\\cloud_new\\Cloud_Project\\Cloud_Project.Application\\Cloud_Project.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DELL\\Desktop\\Cloud\\Cloud_Project\\Cloud_Project.Application\\Cloud_Project.Application.csproj",
+        "projectUniqueName": "D:\\USER\\cloud_new\\Cloud_Project\\Cloud_Project.Application\\Cloud_Project.Application.csproj",
         "projectName": "Cloud_Project.Application",
-        "projectPath": "C:\\Users\\DELL\\Desktop\\Cloud\\Cloud_Project\\Cloud_Project.Application\\Cloud_Project.Application.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DELL\\Desktop\\Cloud\\Cloud_Project\\Cloud_Project.Application\\obj\\",
+        "projectPath": "D:\\USER\\cloud_new\\Cloud_Project\\Cloud_Project.Application\\Cloud_Project.Application.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "D:\\USER\\cloud_new\\Cloud_Project\\Cloud_Project.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\DELL\\Desktop\\Cloud\\Cloud_Project\\Cloud_Project.Domain\\Cloud_Project.Domain.csproj": {
-                "projectPath": "C:\\Users\\DELL\\Desktop\\Cloud\\Cloud_Project\\Cloud_Project.Domain\\Cloud_Project.Domain.csproj"
+              "D:\\USER\\cloud_new\\Cloud_Project\\Cloud_Project.Domain\\Cloud_Project.Domain.csproj": {
+                "projectPath": "D:\\USER\\cloud_new\\Cloud_Project\\Cloud_Project.Domain\\Cloud_Project.Domain.csproj"
               }
             }
           }
@@ -123,20 +123,20 @@
         }
       }
     },
-    "C:\\Users\\DELL\\Desktop\\Cloud\\Cloud_Project\\Cloud_Project.Domain\\Cloud_Project.Domain.csproj": {
+    "D:\\USER\\cloud_new\\Cloud_Project\\Cloud_Project.Domain\\Cloud_Project.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DELL\\Desktop\\Cloud\\Cloud_Project\\Cloud_Project.Domain\\Cloud_Project.Domain.csproj",
+        "projectUniqueName": "D:\\USER\\cloud_new\\Cloud_Project\\Cloud_Project.Domain\\Cloud_Project.Domain.csproj",
         "projectName": "Cloud_Project.Domain",
-        "projectPath": "C:\\Users\\DELL\\Desktop\\Cloud\\Cloud_Project\\Cloud_Project.Domain\\Cloud_Project.Domain.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DELL\\Desktop\\Cloud\\Cloud_Project\\Cloud_Project.Domain\\obj\\",
+        "projectPath": "D:\\USER\\cloud_new\\Cloud_Project\\Cloud_Project.Domain\\Cloud_Project.Domain.csproj",
+        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+        "outputPath": "D:\\USER\\cloud_new\\Cloud_Project\\Cloud_Project.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
