@@ -55,8 +55,13 @@ namespace Cloud_Project.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePackage(string id)
         {
-            await _mediator.Send(new DeletePackageCommand(id));
+            var result = await _mediator.Send(new DeletePackageCommand(id));
+
+            if (!result.Success)
+                return BadRequest(result.Errors);
+
             return Ok("Deleted");
         }
+
     }
 }

@@ -29,12 +29,15 @@ public class CreatePackage : IRequestHandler<CreatePackageCommand, CreatePackage
         {
             return new CreatePackageResult(false, new List<string> { "Invalid package details" });
         }
+
         var package = new Package
         {
             Id = _idGenerator.GenerateId<Package>(ModelPrefix.Package),
             Size = command.Size,
             Weight = command.Weight,
             Address = command.Address
+
+
         };
         var result = await _packageRepository.CreatePackageAsync(package);
         if (result != null)

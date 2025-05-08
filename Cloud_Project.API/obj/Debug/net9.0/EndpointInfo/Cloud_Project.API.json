@@ -445,78 +445,6 @@
         },
         "additionalProperties": false
       },
-      "Delivery": {
-        "required": [
-          "packages"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "nullable": true
-          },
-          "packages": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Package"
-            }
-          },
-          "statusDelivery": {
-            "$ref": "#/components/schemas/Status"
-          },
-          "merchant_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "merchant": {
-            "$ref": "#/components/schemas/Merchant"
-          },
-          "deliveryPerson_id": {
-            "type": "string",
-            "nullable": true
-          },
-          "deliveryPerson": {
-            "$ref": "#/components/schemas/DeliveryPerson"
-          }
-        },
-        "additionalProperties": false
-      },
-      "DeliveryPerson": {
-        "required": [
-          "email",
-          "passsword",
-          "phoneNumber",
-          "userName"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "nullable": true
-          },
-          "userName": {
-            "maxLength": 30,
-            "minLength": 2,
-            "type": "string"
-          },
-          "email": {
-            "minLength": 1,
-            "type": "string",
-            "format": "email"
-          },
-          "passsword": {
-            "minLength": 1,
-            "type": "string",
-            "format": "password"
-          },
-          "phoneNumber": {
-            "minLength": 1,
-            "type": "string",
-            "format": "tel"
-          }
-        },
-        "additionalProperties": false
-      },
       "LoginDto": {
         "required": [
           "password",
@@ -531,36 +459,6 @@
           "password": {
             "minLength": 1,
             "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Merchant": {
-        "required": [
-          "email",
-          "passsword",
-          "userName"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "nullable": true
-          },
-          "userName": {
-            "maxLength": 30,
-            "minLength": 2,
-            "type": "string"
-          },
-          "email": {
-            "minLength": 1,
-            "type": "string",
-            "format": "email"
-          },
-          "passsword": {
-            "minLength": 1,
-            "type": "string",
-            "format": "password"
           }
         },
         "additionalProperties": false
@@ -590,12 +488,9 @@
             "minLength": 1,
             "type": "string"
           },
-          "delivery_id": {
+          "deliveryId": {
             "type": "string",
             "nullable": true
-          },
-          "delivery": {
-            "$ref": "#/components/schemas/Delivery"
           }
         },
         "additionalProperties": false
@@ -630,15 +525,6 @@
           }
         },
         "additionalProperties": false
-      },
-      "Status": {
-        "enum": [
-          0,
-          1,
-          2
-        ],
-        "type": "integer",
-        "format": "int32"
       }
     }
   }

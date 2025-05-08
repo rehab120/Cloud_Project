@@ -15,7 +15,7 @@ public class DeletePackage : IRequestHandler<DeletePackageCommand, DeletePackage
     {
         _packageRepository = packageRepository;
     }
-    
+
     public async Task<DeletePackageResult> Handle(DeletePackageCommand command, CancellationToken cancellationToken)
     {
         var package = await _packageRepository.GetPackageByIdAsync(command.PackageId);
@@ -23,11 +23,14 @@ public class DeletePackage : IRequestHandler<DeletePackageCommand, DeletePackage
         {
             return new DeletePackageResult(false, new List<string> { "Package not found" });
         }
-        var result = await _packageRepository.DeletePackageAsync(command.PackageId);
-        if (result != null)
+
+        var success = await _packageRepository.DeletePackageAsync(command.PackageId);
+        if (success)
         {
             return new DeletePackageResult(true, new List<string>());
         }
+
         return new DeletePackageResult(false, new List<string> { "Failed to delete package" });
     }
+
 }

@@ -4,6 +4,7 @@ using Cloud_Project.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cloud_Project.Infrastructure.Migrations
 {
     [DbContext(typeof(CloudDbContext))]
-    partial class CloudDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250508185446_UpdateDeliverName")]
+    partial class UpdateDeliverName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -106,6 +109,9 @@ namespace Cloud_Project.Infrastructure.Migrations
 
                     b.Property<string>("DeliveryId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("DeliveryName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Size")
                         .IsRequired()

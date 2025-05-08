@@ -67,7 +67,7 @@ namespace Cloud_Project.Infrastructure.Persistence.Repositories
 
                 foreach (var package in packages)
                 {
-                    if (package.Delivery_id != null)
+                    if (package.DeliveryId != null)
                     {
                         var lastDelivery = _context.Delivery.OrderByDescending(d => d.Id).FirstOrDefault();
                         _context.Delivery.Remove(lastDelivery);
@@ -75,7 +75,7 @@ namespace Cloud_Project.Infrastructure.Persistence.Repositories
                         await transaction.CommitAsync();
                         return false;
                     }
-                    package.Delivery_id = id;
+                    package.DeliveryId = id;
                     _context.Package.Update(package);
                 }
 
@@ -105,7 +105,7 @@ namespace Cloud_Project.Infrastructure.Persistence.Repositories
         {
             var delivery = await GetDeliveryByIdAsync(id);
             if (delivery == null) return false;
-            List<Package> packages = await _context.Package.Where(p => p.Delivery_id == id).ToListAsync();
+            List<Package> packages = await _context.Package.Where(p => p.DeliveryId == id).ToListAsync();
             if (packages.Any())
             {
                 return false;
@@ -115,10 +115,10 @@ namespace Cloud_Project.Infrastructure.Persistence.Repositories
 
         public async Task<bool> MakeDeliveryDeleteableAsync(string id)
         {
-            List<Package> packages = await _context.Package.Where(p => p.Delivery_id == id).ToListAsync();
+            List<Package> packages = await _context.Package.Where(p => p.DeliveryId == id).ToListAsync();
             foreach (var package in packages)
             {
-                package.Delivery_id = null;
+                package.DeliveryId = null;
                 _context.Package.Update(package);
             }
             return true;
