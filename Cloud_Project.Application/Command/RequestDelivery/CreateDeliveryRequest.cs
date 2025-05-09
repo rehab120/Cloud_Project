@@ -8,7 +8,7 @@ using MediatR;
 
 namespace Cloud_Project.Application.Command.RequestDelivery
 {
-    public record AddDeliveryRequestCommand(List<string> PackagesIds) : IRequest<AddDeliveryRequestResult>;
+    public record AddDeliveryRequestCommand(string MerchantId, List<string> PackagesIds) : IRequest<AddDeliveryRequestResult>;
     public record AddDeliveryRequestResult(bool Success, List<string> Errors);
 }
 public class CreateDeliveryRequest : IRequestHandler<AddDeliveryRequestCommand, AddDeliveryRequestResult>
@@ -24,6 +24,12 @@ public class CreateDeliveryRequest : IRequestHandler<AddDeliveryRequestCommand, 
 
     public async Task<AddDeliveryRequestResult> Handle(AddDeliveryRequestCommand command, CancellationToken cancellationToken)
     {
+        var merchantId = command.MerchantId;
+        if (string.IsNullOrEmpty(merchantId))
+        {
+            return new AddDeliveryRequestResult(false, new List<string> { "Merchant ID is required" });
+        }
+
         var PackagesIds = command.PackagesIds;
         if (PackagesIds == null || PackagesIds.Count == 0)
         {
@@ -41,7 +47,7 @@ public class CreateDeliveryRequest : IRequestHandler<AddDeliveryRequestCommand, 
             packages.Add(package);
         }
 
-        var deliveryId = await _deliveryRepository.CreateDeliveryAsync();
+        var deliveryId = await _deliveryRepository.CreateDeliveryAsync(merchantId);
         var result = await _deliveryRepository.AddPackagesToDeliveryAsync(deliveryId, packages);
         if (!result)
         {

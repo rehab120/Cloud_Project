@@ -5914,23 +5914,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\USER\\.nuget\\packages\\": {},
+    "C:\\Users\\DELL\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\USER\\cloud_new\\Cloud_Project\\Cloud_Project.API\\Cloud_Project.API.csproj",
+      "projectUniqueName": "C:\\Users\\DELL\\Desktop\\rehab120\\Cloud_Project\\Cloud_Project.API\\Cloud_Project.API.csproj",
       "projectName": "Cloud_Project.API",
-      "projectPath": "D:\\USER\\cloud_new\\Cloud_Project\\Cloud_Project.API\\Cloud_Project.API.csproj",
-      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "D:\\USER\\cloud_new\\Cloud_Project\\Cloud_Project.API\\obj\\",
+      "projectPath": "C:\\Users\\DELL\\Desktop\\rehab120\\Cloud_Project\\Cloud_Project.API\\Cloud_Project.API.csproj",
+      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\DELL\\Desktop\\rehab120\\Cloud_Project\\Cloud_Project.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5945,11 +5945,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "D:\\USER\\cloud_new\\Cloud_Project\\Cloud_Project.Application\\Cloud_Project.Application.csproj": {
-              "projectPath": "D:\\USER\\cloud_new\\Cloud_Project\\Cloud_Project.Application\\Cloud_Project.Application.csproj"
+            "C:\\Users\\DELL\\Desktop\\rehab120\\Cloud_Project\\Cloud_Project.Application\\Cloud_Project.Application.csproj": {
+              "projectPath": "C:\\Users\\DELL\\Desktop\\rehab120\\Cloud_Project\\Cloud_Project.Application\\Cloud_Project.Application.csproj"
             },
-            "D:\\USER\\cloud_new\\Cloud_Project\\Cloud_Project.Infrastructure\\Cloud_Project.Infrastructure.csproj": {
-              "projectPath": "D:\\USER\\cloud_new\\Cloud_Project\\Cloud_Project.Infrastructure\\Cloud_Project.Infrastructure.csproj"
+            "C:\\Users\\DELL\\Desktop\\rehab120\\Cloud_Project\\Cloud_Project.Infrastructure\\Cloud_Project.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\DELL\\Desktop\\rehab120\\Cloud_Project\\Cloud_Project.Infrastructure\\Cloud_Project.Infrastructure.csproj"
             }
           }
         }

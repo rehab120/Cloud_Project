@@ -38,6 +38,7 @@ namespace Cloud_Project.Application
                 // delivery
                 typeof(CreateDeliveryRequest).Assembly,
                 typeof(GetAllAssignedDeliveries).Assembly,
+                typeof(GetAllDeliveries).Assembly,
                 typeof(GetAllFinishedDeliveries).Assembly,
                 typeof(GetDeliveryById).Assembly,
                 typeof(UpdateDeliveryStatus).Assembly,

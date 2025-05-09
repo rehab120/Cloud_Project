@@ -39,12 +39,13 @@ namespace Cloud_Project.Infrastructure.Persistence.Repositories
             return await _context.Delivery.FindAsync(id);
         }
 
-        public async Task<string> CreateDeliveryAsync()
+        public async Task<string> CreateDeliveryAsync(string merchantId)
         {
             var delivery = new Delivery
             {
                 Id = _idGenerator.GenerateId<Delivery>(ModelPrefix.Delivery),
-                StatusDelivery = Status.Pending
+                StatusDelivery = Status.Pending,
+                Merchant_id = merchantId,
             };
 
             await _context.Delivery.AddAsync(delivery);
