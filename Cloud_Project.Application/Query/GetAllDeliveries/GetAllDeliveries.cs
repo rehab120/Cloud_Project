@@ -1,6 +1,7 @@
 ﻿using Cloud_Project.Application.Query.GetAllDeliveries;
 using Cloud_Project.Domain.Entities;
-using Cloud_Project.Domain.Interface;
+using Cloud_Project.Application.Common.Interfaces;
+
 using MediatR;
 
 namespace Cloud_Project.Application.Query.GetAllDeliveries

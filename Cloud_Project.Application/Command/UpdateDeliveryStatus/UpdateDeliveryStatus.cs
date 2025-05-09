@@ -1,5 +1,6 @@
 ﻿using Cloud_Project.Application.Command.UpdateDeliveryStatus;
-using Cloud_Project.Domain.Interface;
+using Cloud_Project.Application.Common.Interfaces;
+
 using Cloud_Project.Domain.Enums;
 using MediatR;
 

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Cloud_Project.Domain.Interface
+namespace Cloud_Project.Application.Common.Interfaces
 {
     public interface IPackageRepository
     {

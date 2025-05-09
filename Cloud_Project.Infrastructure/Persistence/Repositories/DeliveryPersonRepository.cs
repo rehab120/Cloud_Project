@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Cloud_Project.Domain.Entities;
-using Cloud_Project.Domain.Interface;
+using Cloud_Project.Application.Common.Interfaces;
 using Microsoft.AspNetCore.Identity;
 
 namespace Cloud_Project.Infrastructure.Persistence.Repositories

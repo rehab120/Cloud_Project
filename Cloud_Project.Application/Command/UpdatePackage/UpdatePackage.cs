@@ -1,5 +1,5 @@
 ﻿using Cloud_Project.Application.Command.UpdatePackage;
-using Cloud_Project.Domain.Interface;
+using Cloud_Project.Application.Common.Interfaces;
 using Cloud_Project.Domain.Entities;
 using MediatR;
 

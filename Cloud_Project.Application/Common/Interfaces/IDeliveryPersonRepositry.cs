@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Cloud_Project.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 
- namespace Cloud_Project.Domain.Interface
+ namespace Cloud_Project.Application.Common.Interfaces
 
 {
     public interface IDeliveryPersonRepositry

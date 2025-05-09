@@ -5,7 +5,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Cloud_Project.Domain.Entities;
-using Cloud_Project.Domain.Interface;
+using Cloud_Project.Application.Common.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 

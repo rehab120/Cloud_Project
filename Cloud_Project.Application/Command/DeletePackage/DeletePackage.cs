@@ -1,5 +1,6 @@
 ﻿using Cloud_Project.Application.Command.DeletePackage;
-using Cloud_Project.Domain.Interface;
+using Cloud_Project.Application.Common.Interfaces;
+
 using MediatR;
 
 namespace Cloud_Project.Application.Command.DeletePackage

@@ -1,5 +1,5 @@
 ﻿using Cloud_Project.Application.Common.Interfaces;
-using Cloud_Project.Domain.Interface;
+using Cloud_Project.Infrastructure.Identity;
 using Cloud_Project.Infrastructure.Persistence.Repositories;
 using Cloud_Project.Infrastructure.Services;
 using Microsoft.AspNetCore.Identity;
@@ -15,7 +15,7 @@ namespace Cloud_Project.Infrastructure
         {
             services.AddDbContext<CloudDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("Connection")));
 
-            
+            services.AddScoped<IIdentityService, IdentityService>();
             services.AddScoped<IDeliveryRepository, DeliveryRepository>();
             services.AddScoped<IPackageRepository, PackageRepository>();
             services.AddScoped<IIdGenerator, IdGenerator>();
