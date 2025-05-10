@@ -2,6 +2,7 @@
 using Cloud_Project.Application.Command.DeletePackage;
 using Cloud_Project.Application.Command.UpdatePackage;
 using Cloud_Project.Application.Query.GetAllPackages;
+using Cloud_Project.Application.Query.GetAllUnattachedPackages;
 using Cloud_Project.Application.Query.GetPackageById;
 using Cloud_Project.Domain.Entities;
 using MediatR;
@@ -24,6 +25,13 @@ namespace Cloud_Project.API.Controllers
         public async Task<IActionResult> GetAllPackages()
         {
             var packages = await _mediator.Send(new GetAllPackagesQuery());
+            return Ok(packages);
+        }
+
+        [HttpGet("unattached")]
+        public async Task<IActionResult> GetUnattachedPackages()
+        {
+            var packages = await _mediator.Send(new GetAllUnattachedPackagesQuery());
             return Ok(packages);
         }
 

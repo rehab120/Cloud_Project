@@ -228,6 +228,30 @@
         }
       }
     },
+    "/api/Delivery/merchant": {
+      "get": {
+        "tags": [
+          "Delivery"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Delivery/deliveryperson": {
+      "get": {
+        "tags": [
+          "Delivery"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Delivery/{id}/status": {
       "put": {
         "tags": [
@@ -303,6 +327,18 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Package/unattached": {
+      "get": {
+        "tags": [
+          "Package"
+        ],
         "responses": {
           "200": {
             "description": "OK"

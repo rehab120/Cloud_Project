@@ -3,6 +3,8 @@ using Cloud_Project.Application.Command.RequestDelivery;
 using Cloud_Project.Application.Command.UpdateDeliveryStatus;
 using Cloud_Project.Application.Query.GetAllAssignedDeliveries;
 using Cloud_Project.Application.Query.GetAllDeliveries;
+using Cloud_Project.Application.Query.GetAllDeliveriesByDeliveryPersonId;
+using Cloud_Project.Application.Query.GetAllDeliveriesByMerchantId;
 using Cloud_Project.Application.Query.GetAllFinishedDeliveries;
 using Cloud_Project.Application.Query.GetDeliveryById;
 using Cloud_Project.Domain.Entities;
@@ -17,7 +19,6 @@ namespace Cloud_Project.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    //[Authorize]
     public class DeliveryController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -28,20 +29,21 @@ namespace Cloud_Project.API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Merchant")]
         public async Task<IActionResult> CreateDeliveryRequest([FromBody] List<string> packagesIds)
         {
-            //var merchantIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
-            //if (merchantIdClaim == null)
-            //{
-            //    return Unauthorized("Invalid Token: Merchant ID not found in claims");
-            //}
-            //var merchantId = merchantIdClaim.Value;
-            //if (string.IsNullOrEmpty(merchantId))
-            //{
-            //    return BadRequest("Merchant ID is required");
-            //}
+            var merchantIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (merchantIdClaim == null)
+            {
+                return Unauthorized("Invalid Token: Merchant ID not found in claims");
+            }
+            var merchantId = merchantIdClaim.Value;
+            if (string.IsNullOrEmpty(merchantId))
+            {
+                return BadRequest("Merchant ID is required");
+            }
 
-            string merchantId = "M-1"; // For testing purposes, replace with actual merchant ID retrieval logic
+            //string merchantId = "M-1"; // For testing purposes, replace with actual merchant ID retrieval logic
 
             var result = await _mediator.Send(new AddDeliveryRequestCommand(merchantId, packagesIds));
             if (result.Success)
@@ -95,21 +97,70 @@ namespace Cloud_Project.API.Controllers
             return Ok(delivery);
         }
 
+        [HttpGet("merchant")]
+        [Authorize(Roles = "Merchant")]
+        public async Task<IActionResult> GetDeliveriesByMerchantId()
+        {
+            var merchantIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (merchantIdClaim == null)
+            {
+                return Unauthorized("Invalid Token: Merchant ID not found in claims");
+            }
+            
+            var merchantId = merchantIdClaim.Value;
+            if (string.IsNullOrEmpty(merchantId))
+            {
+                return BadRequest("Merchant ID is required");
+            }
+            
+            var deliveries = await _mediator.Send(new GetAllDeliveriesByMerchantIdQuery(merchantId));
+            if (deliveries == null || deliveries.Count == 0)
+            {
+                return NotFound("No deliveries found for this merchant");
+            }
+            return Ok(deliveries);
+        }
+
+        [HttpGet("deliveryperson")]
+        [Authorize(Roles = "DeliveryPerson")]
+        public async Task<IActionResult> GetDeliveriesByDeliveryPersonId()
+        {
+            var deliveryPersonIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (deliveryPersonIdClaim == null)
+            {
+                return Unauthorized("Invalid Token: Delivery Person ID not found in claims");
+            }
+            
+            var deliveryPersonId = deliveryPersonIdClaim.Value;
+            if (string.IsNullOrEmpty(deliveryPersonId))
+            {
+                return BadRequest("Delivery Person ID is required");
+            }
+            
+            var deliveries = await _mediator.Send(new GetAllDeliveriesByDeliveryPersonIdQuery(deliveryPersonId));
+            if (deliveries == null || deliveries.Count == 0)
+            {
+                return NotFound("No deliveries found for this delivery person");
+            }
+            return Ok(deliveries);
+        }
+
         [HttpPut("{id}/status")]
+        [Authorize(Roles = "DeliveryPerson")]
         public async Task<IActionResult> UpdateDeliveryStatus(string id, [FromBody] string status)
         {
-            //var deliveryPersonIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
-            //if (deliveryPersonIdClaim == null)
-            //{
-            //    return Unauthorized("Invalid Token: Delivery Person ID not found in claims");
-            //}
-            //var deliveryPersonId = deliveryPersonIdClaim.Value;
-            //if (string.IsNullOrEmpty(deliveryPersonId))
-            //{
-            //    return BadRequest("Delivery Person ID is required");
-            //}
+            var deliveryPersonIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (deliveryPersonIdClaim == null)
+            {
+                return Unauthorized("Invalid Token: Delivery Person ID not found in claims");
+            }
+            var deliveryPersonId = deliveryPersonIdClaim.Value;
+            if (string.IsNullOrEmpty(deliveryPersonId))
+            {
+                return BadRequest("Delivery Person ID is required");
+            }
 
-            string deliveryPersonId = "D-1"; // For testing purposes, replace with actual delivery person ID retrieval logic
+            //string deliveryPersonId = "D-1"; // For testing purposes, replace with actual delivery person ID retrieval logic
 
             if (string.IsNullOrEmpty(status))
             {
@@ -155,6 +206,7 @@ namespace Cloud_Project.API.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Merchant")]
         public async Task<IActionResult> DeleteDeliveryStatusAsync(string id)
         {
             var result = await _mediator.Send(new DeleteDeliveryCommand(id));

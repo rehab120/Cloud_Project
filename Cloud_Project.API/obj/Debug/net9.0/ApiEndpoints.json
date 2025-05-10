@@ -148,8 +148,28 @@
   },
   {
     "ContainingType": "Cloud_Project.API.Controllers.DeliveryController",
+    "Method": "GetDeliveriesByDeliveryPersonId",
+    "RelativePath": "api/Delivery/deliveryperson",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cloud_Project.API.Controllers.DeliveryController",
     "Method": "GetAllFinishedDeliveries",
     "RelativePath": "api/Delivery/finished",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cloud_Project.API.Controllers.DeliveryController",
+    "Method": "GetDeliveriesByMerchantId",
+    "RelativePath": "api/Delivery/merchant",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -233,6 +253,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cloud_Project.API.Controllers.PackageController",
+    "Method": "GetUnattachedPackages",
+    "RelativePath": "api/Package/unattached",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

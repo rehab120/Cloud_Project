@@ -14,6 +14,8 @@ using System.Threading.Tasks;
         Task<List<Delivery>> GetAllAssignedDeliveriesAsync();
         Task<List<Delivery>> GetAllFinishedDeliveriesAsync();
         Task<Delivery> GetDeliveryByIdAsync(string id);
+        Task<List<Delivery>> GetAllDeliveriesByMerchantIdAsync(string id);
+        Task<List<Delivery>> GetAllDeliveriesByDeliveryPersonIdAsync(string id);
         Task<string> CreateDeliveryAsync(string merchantId);
         Task<bool> AddPackagesToDeliveryAsync(string id, List<Package> packages);
 

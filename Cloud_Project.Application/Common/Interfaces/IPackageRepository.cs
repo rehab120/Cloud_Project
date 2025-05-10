@@ -10,6 +10,7 @@ namespace Cloud_Project.Application.Common.Interfaces
     public interface IPackageRepository
     {
         Task<List<Package>> GetAllPackagesAsync();
+        Task<List<Package>> GetUnattachedToDeliveryPackagesAsync();
         Task<Package> GetPackageByIdAsync(string id);
         Task<Package> CreatePackageAsync(Package package);
         Task<Package> UpdatePackageAsync(Package package);

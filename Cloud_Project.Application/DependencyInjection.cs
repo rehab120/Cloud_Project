@@ -34,11 +34,14 @@ namespace Cloud_Project.Application
                 typeof(GetPackageById).Assembly,
                 typeof(UpdatePackage).Assembly,
                 typeof(DeletePackage).Assembly,
+                typeof(GetAllUnattachedPackages).Assembly,
 
                 // delivery
                 typeof(CreateDeliveryRequest).Assembly,
                 typeof(GetAllAssignedDeliveries).Assembly,
                 typeof(GetAllDeliveries).Assembly,
+                typeof(GetAllDeliveriesByMerchantId).Assembly,
+                typeof(GetAllDeliveriesByDeliveryPersonId).Assembly,
                 typeof(GetAllFinishedDeliveries).Assembly,
                 typeof(GetDeliveryById).Assembly,
                 typeof(UpdateDeliveryStatus).Assembly,

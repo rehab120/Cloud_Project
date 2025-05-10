@@ -39,6 +39,16 @@ namespace Cloud_Project.Infrastructure.Persistence.Repositories
             return await _context.Delivery.FindAsync(id);
         }
 
+        public async Task<List<Delivery>> GetAllDeliveriesByMerchantIdAsync(string id)
+        {
+            return await _context.Delivery.Where(d => d.Merchant_id == id).Include(d => d.DeliveryPerson).ToListAsync();
+        }
+
+        public async Task<List<Delivery>> GetAllDeliveriesByDeliveryPersonIdAsync(string id)
+        {
+            return await _context.Delivery.Where(d => d.DeliveryPerson_id == id || d.DeliveryPerson_id == null).Include(d => d.Merchant).ToListAsync();
+        }
+
         public async Task<string> CreateDeliveryAsync(string merchantId)
         {
             var delivery = new Delivery

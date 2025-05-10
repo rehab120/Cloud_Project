@@ -10,25 +10,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddApplicationServices(builder.Configuration);
 
-//builder.Services
-//    .AddApplicationServices(builder.Configuration)
-//    .AddInfrastructureServices(builder.Configuration);
-
-
-//// commands
-//builder.Services.AddMediatR(typeof(CreatePackage).Assembly);
-//builder.Services.AddMediatR(typeof(CreateDeliveryRequest).Assembly);
-////builder.Services.AddMediatR(typeof(UpdateDeliveryStatus).Assembly);
-
-//// queries
-//builder.Services.AddMediatR(typeof(GetAllPackages).Assembly);
-////builder.Services.AddMediatR(typeof(GetAllAssignedDeliveryRequests).Assembly);
-////builder.Services.AddMediatR(typeof(GetAllFinishedDeliveryRequests).Assembly);
-
-//builder.Services.AddDbContext<CloudDbContext>(options =>
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("Connection")));
-
-
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 //builder.Services.AddOpenApi();

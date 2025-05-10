@@ -26,7 +26,14 @@ namespace Cloud_Project.Infrastructure.Persistence.Repositories
         {
             return await _context.Package.ToListAsync();
         }
-        
+
+        public async Task<List<Package>> GetUnattachedToDeliveryPackagesAsync()
+        {
+            return await _context.Package
+                .Where(p => p.DeliveryId == null)
+                .ToListAsync();
+        }
+
         public async Task<Package> GetPackageByIdAsync(string id)
         {
             return await _context.Package.FindAsync(id);
