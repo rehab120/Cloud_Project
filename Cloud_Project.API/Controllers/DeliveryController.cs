@@ -30,18 +30,18 @@ namespace Cloud_Project.API.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateDeliveryRequest([FromBody] List<string> packagesIds)
         {
-            var merchantIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
-            if (merchantIdClaim == null)
-            {
-                return Unauthorized("Invalid Token: Merchant ID not found in claims");
-            }
-            var merchantId = merchantIdClaim.Value;
-            if (string.IsNullOrEmpty(merchantId))
-            {
-                return BadRequest("Merchant ID is required");
-            }
+            //var merchantIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            //if (merchantIdClaim == null)
+            //{
+            //    return Unauthorized("Invalid Token: Merchant ID not found in claims");
+            //}
+            //var merchantId = merchantIdClaim.Value;
+            //if (string.IsNullOrEmpty(merchantId))
+            //{
+            //    return BadRequest("Merchant ID is required");
+            //}
 
-            //string merchantId = "M-1"; // For testing purposes, replace with actual merchant ID retrieval logic
+            string merchantId = "M-1"; // For testing purposes, replace with actual merchant ID retrieval logic
 
             var result = await _mediator.Send(new AddDeliveryRequestCommand(merchantId, packagesIds));
             if (result.Success)
@@ -98,18 +98,18 @@ namespace Cloud_Project.API.Controllers
         [HttpPut("{id}/status")]
         public async Task<IActionResult> UpdateDeliveryStatus(string id, [FromBody] string status)
         {
-            var deliveryPersonIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
-            if (deliveryPersonIdClaim == null)
-            {
-                return Unauthorized("Invalid Token: Delivery Person ID not found in claims");
-            }
-            var deliveryPersonId = deliveryPersonIdClaim.Value;
-            if (string.IsNullOrEmpty(deliveryPersonId))
-            {
-                return BadRequest("Delivery Person ID is required");
-            }
+            //var deliveryPersonIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            //if (deliveryPersonIdClaim == null)
+            //{
+            //    return Unauthorized("Invalid Token: Delivery Person ID not found in claims");
+            //}
+            //var deliveryPersonId = deliveryPersonIdClaim.Value;
+            //if (string.IsNullOrEmpty(deliveryPersonId))
+            //{
+            //    return BadRequest("Delivery Person ID is required");
+            //}
 
-            //string deliveryPersonId = "D-1"; // For testing purposes, replace with actual delivery person ID retrieval logic
+            string deliveryPersonId = "D-1"; // For testing purposes, replace with actual delivery person ID retrieval logic
 
             if (string.IsNullOrEmpty(status))
             {
@@ -119,6 +119,31 @@ namespace Cloud_Project.API.Controllers
             if (!Enum.TryParse(status, true, out Status deliveryStatus))
             {
                 return BadRequest("Invalid status value");
+            }
+
+            // Check the delivery status that exists
+            var delivery = await _mediator.Send(new GetDeliveryByIdQuery(id));
+            if (delivery == null)
+            {
+                return NotFound("Delivery not found");
+            }
+
+            Status oldDeliveryStatus = delivery.StatusDelivery;
+            if (oldDeliveryStatus == deliveryStatus)
+            {
+                return BadRequest("The status is already the same as the new status");
+            }
+            if (deliveryStatus == Status.Pending)
+            {
+                return BadRequest("You can't set the delivery status to be pending");
+            }
+            if (oldDeliveryStatus == Status.Pending && deliveryStatus == Status.Delivered)
+            {
+                return BadRequest("The delivery must be picked first");
+            }
+            if (oldDeliveryStatus == Status.Delivered && deliveryStatus == Status.Picked)
+            {
+                return BadRequest("The delivery is already delivered, you can't pick it again");
             }
 
             var result = await _mediator.Send(new UpdateDeliveryStatusCommand (id, deliveryStatus, deliveryPersonId));
