@@ -97,7 +97,7 @@ namespace Cloud_Project.Infrastructure.Identity
                 issuer: issuer,
                 audience: audience,
                 claims: claims,
-                expires: DateTime.Now.AddMinutes(5),
+                expires: DateTime.Now.AddMinutes(30),
                 signingCredentials: creds
             );
 
