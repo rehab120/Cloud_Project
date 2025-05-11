@@ -20,6 +20,14 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
     });
 
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddHttpsRedirection(options =>
+    {
+        options.HttpsPort = 5001; // or your dev HTTPS port
+    });
+}
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
@@ -37,6 +45,7 @@ var app = builder.Build();
 app.UseMiddleware<TokenBlacklistMiddleware>();
 
 
+
 //Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
 //{
@@ -44,6 +53,7 @@ app.UseMiddleware<TokenBlacklistMiddleware>();
 //}
 if (app.Environment.IsDevelopment())
 {
+    app.UseHttpsRedirection();
     app.UseSwagger();
     app.UseSwaggerUI();
 }
